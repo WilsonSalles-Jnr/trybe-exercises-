@@ -5,3 +5,5 @@ O que eu vou aprender na Trybe:
 - Git
 
 "eu sei que o nome trybe-skills era só de exemplo kkkkk"
+- HTML
+- CSS
