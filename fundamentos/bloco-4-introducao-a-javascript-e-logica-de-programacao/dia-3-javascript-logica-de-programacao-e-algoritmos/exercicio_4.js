@@ -1,26 +1,25 @@
 let n = 5;
-let estrela = '*';
-let arr = ['','','*','',''];
-let pares = false;
-let todos = false;
-for(let i = 0; i < n; i++){
-    if(i===3){
+let estrela = '*'
+let arr = []
+let count = n-1
+for(let i = 0; i<n; i++){
+    arr.push('');
+}
+let meio = Math.ceil(arr.length/2)
+for(let j = 0; j<meio; j++){
+    if(arr[0]==="*"){
+        break;
+    }
+    if(arr[meio-2]==="*" && arr[0]===''){
+        arr[meio+1]="*";
+        arr[meio-3]="*";
         console.log(arr);
-        pares = true;
     }
-    if(pares===true){
-        arr[1]= estrela;
-        arr[3]= estrela;
+    if(arr[meio-1]==="*" && arr[meio-2]===''){
+        console.log(arr)
+        arr[meio]='*';
+        arr[meio-2]='*';
         console.log(arr);
-        pares = false;
     }
-    if(i===4){
-        todos = true;
-    }
-    if(todos===true){
-        arr[0]= estrela;
-        arr[4]= estrela;
-        console.log(arr);
-        todos = false;
-    }
+    arr[meio-1]=estrela
 }
