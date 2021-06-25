@@ -7,9 +7,6 @@ for(let i = 0; i<n; i++){
 }
 let meio = Math.ceil(arr.length/2)
 for(let j = 0; j<meio; j++){
-    if(arr[0]==="*"){
-        break;
-    }
     if(arr[meio-2]==="*" && arr[0]===''){
         arr[meio+1]="*";
         arr[meio-3]="*";
