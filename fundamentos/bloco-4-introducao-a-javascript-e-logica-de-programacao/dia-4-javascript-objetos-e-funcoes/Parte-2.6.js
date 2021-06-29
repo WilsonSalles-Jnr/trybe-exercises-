@@ -1,6 +1,10 @@
-let n = 5
-let soma = 0
-for(let i=0;i<n;i+=1){
-    soma += n-i
+function soma(n){
+    let soma = 0
+    for(let i=0;i<n;i+=1){
+        soma += n-i
+    }
+    console.log(soma);
+    return soma;
 }
-console.log(soma);
+
+soma(5)
