@@ -42,6 +42,25 @@
       </section>
     </main>
     <script>
+        // e1
+        document.getElementsByTagName('p')[1].innerText = 'me vejo trabalhando como um programador';
+        // e2
+        document.getElementsByClassName('main-content')[0].style = 'background-color: rgb(76,164,109)';
+        // e3
+        document.getElementsByClassName('center-content')[0].style = 'background-color: white';
+        // e4
+        document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
+        // e5
+        let text1 = document.getElementsByTagName('p')[0].innerText;
+        document.getElementsByTagName('p')[0].innerText = text1.toUpperCase();
+        let text2 = document.getElementsByTagName('p')[1].innerText;
+        document.getElementsByTagName('p')[1].innerText = text2.toUpperCase();
+        let text3 = document.getElementsByTagName('p')[2].innerText;
+        document.getElementsByTagName('p')[2].innerText = text3.toUpperCase();
+        // e6
+        console.log(text1);
+        console.log(text2);
+        console.log(text3);
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
