@@ -1,14 +1,13 @@
 function funcao(arr) {
-    let index = 0;
-    let letras = 0;
-    for (let i = 0; i < arr.length; i += 1) {
-      if (arr[i].length > letras) {
-        letras = arr[i].length;
-        index += 1
+    let maiorNome = arr[0]
+
+    for(let i in arr){
+      if(maiorNome.length<arr[i].length){
+        maiorNome = arr[i]
       }
     }
-    console.log(arr[index]);
-    return arr[index];
-  
+    console.log(maiorNome);
   }
   funcao(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']);
+
+  //Utilizei o gabarito para entender este exercício, aprendi de maneira satisfatória após ver o vídeo
