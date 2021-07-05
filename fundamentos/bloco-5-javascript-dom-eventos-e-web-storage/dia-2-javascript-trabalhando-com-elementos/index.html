@@ -105,6 +105,12 @@
         maindel.removeChild(maindel.querySelector('.left-content'));
         document.querySelector('.right-content').style = 'margin-right: auto;'
         document.querySelector('.center-content').style = 'background-color: green;'
+
+
+        let lista = document.querySelector('ul');
+        for (let k = 0; k < 2; k += 1){
+            lista.removeChild(lista.lastChild)
+        }
     </script>
 </body>
 
