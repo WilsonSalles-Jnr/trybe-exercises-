@@ -30,8 +30,33 @@ for (let i = 0; i < dezDaysList.length; i += 1) {
 }
 
 const bcont = document.getElementsByClassName('buttons-container')[0];
-const botao = document.createElement('button');
+const holy = document.createElement('button');
+const friday = document.createElement('button');
 
-botao.innerHTML = 'Feriados';
-botao.id = 'btn-holiday'
-bcont.append(botao);
+holy.innerHTML = 'Feriados';
+holy.id = 'btn-holiday'
+friday.innerHTML = 'Sexta-Feira'
+friday.id = 'btn-friday'
+bcont.appendChild(holy);
+bcont.appendChild(friday);
+
+friday.addEventListener('click',sextou)
+
+let salvaDia = [];
+let sextar = true;
+function sextou(){
+    const sextafeiras = document.querySelectorAll('.friday');
+    if (document.querySelectorAll('.friday')[0].innerText !== 'SEXTOU !'){
+        for(let i = 0; i < sextafeiras.length; i += 1){
+            salvaDia.push(parseInt(sextafeiras[i].innerHTML))
+            sextafeiras[i].innerHTML = 'SEXTOU !';
+        }
+        sextar = false;
+    }
+    else if (document.querySelectorAll('.friday')[0].innerText === 'SEXTOU !') {
+        for (let j = 0; j < sextafeiras.length; j += 1){
+            document.querySelectorAll('.friday')[j].innerText = salvaDia[j]
+        }
+        sextar = true;
+    }
+}
