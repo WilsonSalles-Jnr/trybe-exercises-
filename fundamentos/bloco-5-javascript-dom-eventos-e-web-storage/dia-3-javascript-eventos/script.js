@@ -28,3 +28,10 @@ for (let i = 0; i < dezDaysList.length; i += 1) {
     li.innerHTML = dezDaysList[i];
     unorder.appendChild(li);
 }
+
+const bcont = document.getElementsByClassName('buttons-container')[0];
+const botao = document.createElement('button');
+
+botao.innerHTML = 'Feriados';
+botao.id = 'btn-holiday'
+bcont.append(botao);
