@@ -99,6 +99,18 @@ function unzoom(event){
         criadiv.style = cor;
         criaspan.innerText = string + '\n';
         criadiv.innerHTML = 'legenda'
+        criadiv.className = 'task'
+        criadiv.addEventListener('click', selected)
         document.querySelector('.my-tasks').appendChild(criadiv)
         document.querySelector('.my-tasks').appendChild(criaspan)
+    }
+
+    function selected(event){
+        for (let i = 0; i< document.querySelectorAll('.task').length; i += 1){
+            document.querySelectorAll('.task')[i].className = 'task'
+            
+
+        }
+        event.target.className += ' selected'
+        
     }
