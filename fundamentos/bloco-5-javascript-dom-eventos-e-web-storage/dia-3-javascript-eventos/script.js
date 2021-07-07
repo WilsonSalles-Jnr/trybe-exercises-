@@ -61,11 +61,11 @@ function sextou(){
     }
 }
 
-const ulFilho = document.querySelectorAll('.day');
-for (let i in ulFilho){
-    ulFilho[i].addEventListener('mouseover',zoom)
-    ulFilho[i].addEventListener('mouseleave',unzoom)
-}
+// const ulFilho = document.querySelectorAll('.day');
+// for (let i in ulFilho){
+//     ulFilho[i].addEventListener('mouseover',zoom)
+//     ulFilho[i].addEventListener('mouseleave',unzoom)
+// }
 
 function zoom(event){
     event.target.style = 'transform: scale(1.5); transition: .3s'
@@ -73,3 +73,28 @@ function zoom(event){
 function unzoom(event){
     event.target.style = 'transform: scale(1); transition: .3s'
 }
+
+const task = document.getElementsByClassName('task-list')[0];
+const mytask = document.getElementsByClassName('my-tasks')[0];
+const add = document.getElementById('btn-add');
+
+add.addEventListener('click', adicionaTarefa)
+
+function adicionaTarefa(){
+    const createSpan = document.createElement('span');
+    const input = document.getElementById('task-input');
+    task.appendChild(createSpan)
+    createSpan.innerText += input.value + '\n'
+    
+}
+
+function adicionaCor(cor){
+    for (let i = 0; i < document.getElementsByClassName('task-list')[0].childElementCount; i += 0){
+        const descri = document.createElement('div')
+        descri.style = 'color:'+cor+';';
+        descri.innerText = 'descricao';
+        mytask.appendChild(descri);
+
+    }
+}
+adicionaCor('red');
