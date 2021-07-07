@@ -85,16 +85,9 @@ function adicionaTarefa(){
     const input = document.getElementById('task-input');
     task.appendChild(createSpan)
     createSpan.innerText += input.value + '\n'
+    const descri = document.createElement('div')
+    descri.style = 'color:red;';
+    descri.innerHTML = 'descricao';
+    mytask.appendChild(descri);
     
 }
-
-function adicionaCor(cor){
-    for (let i = 0; i < document.getElementsByClassName('task-list')[0].childElementCount; i += 0){
-        const descri = document.createElement('div')
-        descri.style = 'color:'+cor+';';
-        descri.innerText = 'descricao';
-        mytask.appendChild(descri);
-
-    }
-}
-adicionaCor('red');
