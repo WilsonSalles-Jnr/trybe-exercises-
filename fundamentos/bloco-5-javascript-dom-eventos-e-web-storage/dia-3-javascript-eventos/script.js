@@ -60,3 +60,16 @@ function sextou(){
         sextar = true;
     }
 }
+
+const ulFilho = document.querySelectorAll('.day');
+for (let i in ulFilho){
+    ulFilho[i].addEventListener('mouseover',zoom)
+    ulFilho[i].addEventListener('mouseleave',unzoom)
+}
+
+function zoom(event){
+    event.target.style = 'transform: scale(1.5); transition: .3s'
+}
+function unzoom(event){
+    event.target.style = 'transform: scale(1); transition: .3s'
+}
