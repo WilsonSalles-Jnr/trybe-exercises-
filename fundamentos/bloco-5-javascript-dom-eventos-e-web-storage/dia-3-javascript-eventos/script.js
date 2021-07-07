@@ -14,6 +14,7 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
+//inserir dias
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const unorder = document.getElementById('days');
 for (let i = 0; i < dezDaysList.length; i += 1) {
@@ -26,6 +27,8 @@ for (let i = 0; i < dezDaysList.length; i += 1) {
         li.className += ' friday'
     }
     li.innerHTML = dezDaysList[i];
+    li.addEventListener('mouseover',zoom)
+    li.addEventListener('mouseleave',unzoom)
     unorder.appendChild(li);
 }
 
@@ -42,8 +45,9 @@ bcont.appendChild(friday);
 
 friday.addEventListener('click',sextou)
 
+
+//Colocar sextou
 let salvaDia = [];
-let sextar = true;
 function sextou(){
     const sextafeiras = document.querySelectorAll('.friday');
     if (document.querySelectorAll('.friday')[0].innerText !== 'SEXTOU !'){
@@ -51,21 +55,14 @@ function sextou(){
             salvaDia.push(parseInt(sextafeiras[i].innerHTML))
             sextafeiras[i].innerHTML = 'SEXTOU !';
         }
-        sextar = false;
     }
     else if (document.querySelectorAll('.friday')[0].innerText === 'SEXTOU !') {
         for (let j = 0; j < sextafeiras.length; j += 1){
             document.querySelectorAll('.friday')[j].innerText = salvaDia[j]
         }
-        sextar = true;
     }
 }
 
-// const ulFilho = document.querySelectorAll('.day');
-// for (let i in ulFilho){
-//     ulFilho[i].addEventListener('mouseover',zoom)
-//     ulFilho[i].addEventListener('mouseleave',unzoom)
-// }
 
 function zoom(event){
     event.target.style = 'transform: scale(1.5); transition: .3s'
@@ -74,20 +71,34 @@ function unzoom(event){
     event.target.style = 'transform: scale(1); transition: .3s'
 }
 
-const task = document.getElementsByClassName('task-list')[0];
-const mytask = document.getElementsByClassName('my-tasks')[0];
-const add = document.getElementById('btn-add');
+// const task = document.getElementsByClassName('task-list')[0];
+// const mytask = document.getElementsByClassName('my-tasks')[0];
 
-add.addEventListener('click', adicionaTarefa)
 
-function adicionaTarefa(){
-    const createSpan = document.createElement('span');
-    const input = document.getElementById('task-input');
-    task.appendChild(createSpan)
-    createSpan.innerText += input.value + '\n'
-    const descri = document.createElement('div')
-    descri.style = 'color:red;';
-    descri.innerHTML = 'descricao';
-    mytask.appendChild(descri);
+// function adicionaTarefa(){
+    //     const createSpan = document.createElement('span');
+    //     const input = document.getElementById('task-input');
+    //     task.appendChild(createSpan)
+    //     createSpan.innerText += input.value + '\n'
+    //     const descri = document.createElement('div')
+    //     descri.className = 'task'
+    //     descri.style = 'color:red;';
+    //     descri.innerHTML = 'descricao';
+    //     mytask.appendChild(descri);
     
-}
+    // }
+    
+    const add = document.getElementById('btn-add');
+    add.addEventListener('click', adicionaTarefa)
+
+    function adicionaTarefa(string,cor){
+        string = document.getElementById('task-input').value;
+        cor = 'background-color: red;';
+        const criadiv = document.createElement('div')
+        const criaspan = document.createElement('span')
+        criadiv.style = cor;
+        criaspan.innerText = string + '\n';
+        criadiv.innerHTML = 'legenda'
+        document.querySelector('.my-tasks').appendChild(criadiv)
+        document.querySelector('.my-tasks').appendChild(criaspan)
+    }
