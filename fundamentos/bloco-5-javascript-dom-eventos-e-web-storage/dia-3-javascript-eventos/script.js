@@ -27,8 +27,9 @@ for (let i = 0; i < dezDaysList.length; i += 1) {
         li.className += ' friday'
     }
     li.innerHTML = dezDaysList[i];
-    li.addEventListener('mouseover',zoom)
-    li.addEventListener('mouseleave',unzoom)
+    li.addEventListener('mouseover', zoom)
+    li.addEventListener('mouseleave', unzoom)
+    li.addEventListener('click', colortext)
     unorder.appendChild(li);
 }
 
@@ -43,32 +44,33 @@ friday.id = 'btn-friday'
 bcont.appendChild(holy);
 bcont.appendChild(friday);
 
-friday.addEventListener('click',sextou)
+friday.addEventListener('click', sextou)
 
 
 //Colocar sextou
 let salvaDia = [];
-function sextou(){
+
+function sextou() {
     const sextafeiras = document.querySelectorAll('.friday');
-    if (document.querySelectorAll('.friday')[0].innerText !== 'SEXTOU !'){
-        for(let i = 0; i < sextafeiras.length; i += 1){
+    if (document.querySelectorAll('.friday')[0].innerText !== 'SEXTOU !') {
+        for (let i = 0; i < sextafeiras.length; i += 1) {
             salvaDia.push(parseInt(sextafeiras[i].innerHTML))
             sextafeiras[i].innerHTML = 'SEXTOU !';
         }
-    }
-    else if (document.querySelectorAll('.friday')[0].innerText === 'SEXTOU !') {
-        for (let j = 0; j < sextafeiras.length; j += 1){
+    } else if (document.querySelectorAll('.friday')[0].innerText === 'SEXTOU !') {
+        for (let j = 0; j < sextafeiras.length; j += 1) {
             document.querySelectorAll('.friday')[j].innerText = salvaDia[j]
         }
     }
 }
 
 
-function zoom(event){
-    event.target.style = 'transform: scale(1.5); transition: .3s'
+function zoom(event) {
+    event.target.style.zoom ='150%'
 }
-function unzoom(event){
-    event.target.style = 'transform: scale(1); transition: .3s'
+
+function unzoom(event) {
+    event.target.style.zoom ='100%'
 }
 
 // const task = document.getElementsByClassName('task-list')[0];
@@ -76,41 +78,50 @@ function unzoom(event){
 
 
 // function adicionaTarefa(){
-    //     const createSpan = document.createElement('span');
-    //     const input = document.getElementById('task-input');
-    //     task.appendChild(createSpan)
-    //     createSpan.innerText += input.value + '\n'
-    //     const descri = document.createElement('div')
-    //     descri.className = 'task'
-    //     descri.style = 'color:red;';
-    //     descri.innerHTML = 'descricao';
-    //     mytask.appendChild(descri);
-    
-    // }
-    
-    const add = document.getElementById('btn-add');
-    add.addEventListener('click', adicionaTarefa)
+//     const createSpan = document.createElement('span');
+//     const input = document.getElementById('task-input');
+//     task.appendChild(createSpan)
+//     createSpan.innerText += input.value + '\n'
+//     const descri = document.createElement('div')
+//     descri.className = 'task'
+//     descri.style = 'color:red;';
+//     descri.innerHTML = 'descricao';
+//     mytask.appendChild(descri);
 
-    function adicionaTarefa(string,cor){
-        string = document.getElementById('task-input').value;
-        cor = 'background-color: red;';
-        const criadiv = document.createElement('div')
-        const criaspan = document.createElement('span')
-        criadiv.style = cor;
-        criaspan.innerText = string + '\n';
-        criadiv.innerHTML = 'legenda'
-        criadiv.className = 'task'
-        criadiv.addEventListener('click', selected)
-        document.querySelector('.my-tasks').appendChild(criadiv)
-        document.querySelector('.my-tasks').appendChild(criaspan)
+// }
+
+const add = document.getElementById('btn-add');
+add.addEventListener('click', adicionaTarefa)
+
+function adicionaTarefa(string, cor) {
+    string = document.getElementById('task-input').value;
+    cor = 'background-color: red;';
+    const criadiv = document.createElement('div')
+    const criaspan = document.createElement('span')
+    criadiv.style = cor;
+    criaspan.innerText = string + '\n';
+    criadiv.innerHTML = 'legenda'
+    criadiv.className = 'task'
+    criadiv.addEventListener('click', selected)
+    document.querySelector('.my-tasks').appendChild(criadiv)
+    document.querySelector('.my-tasks').appendChild(criaspan)
+}
+
+function selected(event) {
+    for (let i = 0; i < document.querySelectorAll('.task').length; i += 1) {
+        document.querySelectorAll('.task')[i].className = 'task'
+
+
     }
+    event.target.className += ' selected'
 
-    function selected(event){
-        for (let i = 0; i< document.querySelectorAll('.task').length; i += 1){
-            document.querySelectorAll('.task')[i].className = 'task'
-            
+}
 
-        }
-        event.target.className += ' selected'
-        
+function colortext(event) {
+    if(event.target.style.color === 'red'){
+        event.target.style.color = 'rgb(119,119,119)'
+    } else {
+        event.target.style.color = 'red';
+
     }
+}
