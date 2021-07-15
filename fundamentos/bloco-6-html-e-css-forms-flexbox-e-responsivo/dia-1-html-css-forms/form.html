@@ -7,24 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    <fieldset>
-        <input type="text" maxlength="40" required placeholder="Nome">
-        <input type="email" maxlength="50" required placeholder="e-mail">
-        <input type="number" maxlength="11" required placeholder="CPF">
-        <input type="text" maxlength="200" required placeholder="Endereço">
-        <input type="text" max="28" required placeholder="Cidade">
-        <label for="estados">Estados
-            <select name="uf" id="estados">
-            </select>
-        </label>
-        <label for="radio">
-            <input type="radio" name="tipo" id="radio">Casa
-        </label>
-        <label for="apt">
-            <input type="radio" name="tipo" id="apt">Apartamento
+    <form action="">
 
-        </label>
-    </fieldset>
+        <fieldset>
+            <input type="text" maxlength="40" required placeholder="Nome" id="nome">
+            <input type="email" maxlength="50" required placeholder="e-mail" id="nome">
+            <input type="number" maxlength="11" required placeholder="CPF" id="nome">
+            <input type="text" maxlength="200" required placeholder="Endereço" id="nome">
+            <input type="text" max="28" required placeholder="Cidade" id="nome">
+            <label for="estados">Estados
+                <select name="uf" id="estados">
+                </select>
+            </label>
+            <label for="radio">
+                <input type="radio" name="tipo" id="radio">Casa
+            </label>
+            <label for="apt">
+                <input type="radio" name="tipo" id="apt">Apartamento
+            </label>
+        </fieldset>
+        <fieldset>
+            <textarea name="resumo" maxlength="1000" id="" cols="30" rows="10" placeholder="Resumo do currículo" required></textarea>
+            <input type="text" placeholder="Cargo" maxlength="40" required name="" id="cargo">
+            <input type="text" maxlength="500" placeholder="Descrição do cargo" required>
+            <label for="dia">Dia
+                <input type="text" maxlength="2" id="dia" required>
+            </label>
+            <label for="mes">Mês
+                <input type="text" maxlength="2" id="mes" required>
+            </label>
+            <label for="ano">Ano
+                <input type="text" maxlength="4" id="ano" required>
+            </label>
+            <input type="submit" id="enviar">
+        </fieldset>
+    </form>
+    <section id="dados">
+        
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
