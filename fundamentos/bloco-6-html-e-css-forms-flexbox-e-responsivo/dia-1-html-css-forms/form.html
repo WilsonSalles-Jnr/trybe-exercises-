@@ -11,10 +11,10 @@
 
         <fieldset>
             <input type="text" maxlength="40" required placeholder="Nome" id="nome">
-            <input type="email" maxlength="50" required placeholder="e-mail" id="nome">
-            <input type="number" maxlength="11" required placeholder="CPF" id="nome">
-            <input type="text" maxlength="200" required placeholder="Endereço" id="nome">
-            <input type="text" max="28" required placeholder="Cidade" id="nome">
+            <input type="email" maxlength="50" required placeholder="e-mail" id="email">
+            <input type="number" maxlength="11" required placeholder="CPF" id="cpf">
+            <input type="text" maxlength="200" required placeholder="Endereço" id="endereco">
+            <input type="text" max="28" required placeholder="Cidade" id="cidade">
             <label for="estados">Estados
                 <select name="uf" id="estados">
                 </select>
@@ -27,9 +27,9 @@
             </label>
         </fieldset>
         <fieldset>
-            <textarea name="resumo" maxlength="1000" id="" cols="30" rows="10" placeholder="Resumo do currículo" required></textarea>
+            <textarea name="resumo" maxlength="1000" id="" cols="30" rows="10" placeholder="Resumo do currículo" required itemid="textarea"></textarea>
             <input type="text" placeholder="Cargo" maxlength="40" required name="" id="cargo">
-            <input type="text" maxlength="500" placeholder="Descrição do cargo" required>
+            <input type="text" maxlength="500" placeholder="Descrição do cargo" required id="descricao">
             <label for="dia">Dia
                 <input type="text" maxlength="2" id="dia" required>
             </label>
@@ -40,6 +40,7 @@
                 <input type="text" maxlength="4" id="ano" required>
             </label>
             <input type="submit" id="enviar">
+            <input type="reset" id="resetar">
         </fieldset>
     </form>
     <section id="dados">

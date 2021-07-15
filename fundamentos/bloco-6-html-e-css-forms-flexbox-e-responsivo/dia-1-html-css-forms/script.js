@@ -16,21 +16,23 @@ const texto = document.getElementsByTagName('textarea')[0]
 const cargo = document.getElementById('cargo')
 const descri = document.getElementById('descricao')
 const secao = document.getElementById('dados')
+const removeTudo = document.getElementById('resetar')
 
+let datas = [nome,email,cpf,endereco,cidade,estado,tipo,texto,cargo,descri,secao]
 let formul = [
-    'nome',
-    'email',
-    'cpf',
-    'endereco',
-    'cidade',
-    'estado',
-    'tipo',
-    'resumo',
-    'cargo',
-    'descricao',
-    'dia',
-    'mes',
-    'ano'
+    'nome: ',
+    'email: ',
+    'cpf: ',
+    'endereco: ',
+    'cidade: ',
+    'estado: ',
+    'tipo: ',
+    'resumo: ',
+    'cargo: ',
+    'descricao: ',
+    'dia: ',
+    'mes: ',
+    'ano: '
 ]
 
 function addUf(){
@@ -68,15 +70,92 @@ function diaCheck(tipo,x,y,string){
 }
 function makeDiv(){
     let division = document.createElement('div')
-    let par = document.createElement('p')
     secao.appendChild(division)
+    // for (let i = 0; i < formul.length; i += 1){
+    //     let par = document.createElement('p')
+    //     let div = secao.lastChild
+    //     formul[i] = formul[i] + datas[i].value
+    //     par.innerText = formul[i]
+    //     div.appendChild(par)
+    // }
+    pullNome()
+    pullEmail()
+    pullCpf()
+    pullEndereco()
+    pullCidade()
+    pullEstado()
+    pullTipo()
+    pullResumo()
+    pullCargo()
+    pullDescri()
+    pullData()
 }
 
 function listarPar(){
-    for (let i = 0; i < formul.length; i += 1){
-        let par = document.createElement('p')
-        let div = secao.lastChild
-        par.innerText = formul[i]+": aaaaaaaaaaaaaaaaaaaaaaaaa"
-        div.appendChild(par)
-    }
+    
 }
+
+function pullNome(){
+    let par = document.createElement('p');
+    par.innerText = 'Nome: '+ nome.value
+    return secao.lastChild.appendChild(par)
+}
+function pullEmail(){
+    let par = document.createElement('p');
+    par.innerText = 'Email: '+ email.value
+    return secao.lastChild.appendChild(par)
+} 
+function pullCpf(){
+    let par = document.createElement('p');
+    par.innerText = 'CPF : '+ cpf.value
+    return secao.lastChild.appendChild(par)
+}
+function pullEndereco(){
+    let par = document.createElement('p');
+    par.innerText = 'Endereço: ' + endereco.value
+    return secao.lastChild.appendChild(par)
+}
+function pullCidade(){
+    let par = document.createElement('p');
+    par.innerText = 'Cidade: ' + cidade.value
+    return secao.lastChild.appendChild(par)
+}
+function pullEstado(){
+    let par = document.createElement('p');
+    par.innerText = 'Estado: ' + estados.value
+    return secao.lastChild.appendChild(par)
+}
+function pullTipo(){
+    let par = document.createElement('p');
+    par.innerText = 'Tipo: '
+    if(tipo[0].checked === true){
+        par.innerText += 'Casa'
+    } else {
+        par.innerText += 'Apartamento'
+    }
+    return secao.lastChild.appendChild(par)
+}
+function pullResumo(){
+    let par = document.createElement('p');
+    par.innerText = 'Resumo: ' + texto.value
+    return secao.lastChild.appendChild(par)
+}
+function pullCargo(){
+    let par = document.createElement('p');
+    par.innerText = 'Cargo: ' + cargo.value
+    return secao.lastChild.appendChild(par)
+}
+function pullDescri(){
+    let par = document.createElement('p');
+    par.innerText = 'Descrição: ' + descri.value
+    return secao.lastChild.appendChild(par)
+}
+function pullData(){
+    let par = document.createElement('p');
+    par.innerText = 'Data: ' + dia.value + '/' + mes.value + '/' + ano.value
+    return secao.lastChild.appendChild(par)
+}
+function apagaCurriculo(){
+    secao.removeChild(secao.lastChild)
+}
+removeTudo.addEventListener('click',apagaCurriculo)
