@@ -38,3 +38,9 @@
     list-style: none;
     margin-right: 10px;
   }
+.header-container > .menu-container:nth-child(1){
+    order: 1;
+}
+.header-container > .logo-container:nth-child(0){
+    order: 0;
+}
