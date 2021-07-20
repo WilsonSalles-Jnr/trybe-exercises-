@@ -1,0 +1,30 @@
+*{
+    font-size: 1.1em;
+    margin: 3%;
+}
+body {
+
+}
+h1 {
+    font-size: .9em;
+}
+h2 {
+
+}
+
+img {
+    max-width: 100%;
+    padding: 1%;
+}
+
+figure {
+    margin: 0;
+}
+@media screen and (max-width: 620px){
+    *{
+        font-size: 1em;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+}
