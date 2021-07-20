@@ -22,9 +22,39 @@ figure {
 }
 @media screen and (max-width: 620px){
     *{
-        font-size: 1em;
+        margin: 0%;
+        padding: 0%;
+
     }
     body{
-        background-color: antiquewhite;
+        background-color: bisque;
+        font-size: 1em;
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    figure{
+        width: 46%;
+        padding: 1%;
+    }
+    main h2{
+        width: 100%;
+        text-align: center;
+    }
+    h1{
+        font-size: 1.4em;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 990px){
+    *{
+        margin: .5%;
+        padding: .5%;
+    }
+    body{
+        background-color: burlywood;
+        max-width: 100%;
+        font-size: 1.1em;
     }
 }
