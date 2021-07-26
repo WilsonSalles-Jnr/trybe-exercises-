@@ -1,3 +1,5 @@
+// Exercício 1:
+
 const assert = require('assert');
 
 function sum(a, b) {
@@ -13,3 +15,4 @@ function sum(a, b) {
 assert.strictEqual(sum(4,5),9, 'Resultado esperado: 9');
 assert.strictEqual(sum(0,0),0,'Resultado esperado: 0');
 assert.strictEqual(sum(4,'5'),Error('parameters must be numbers'), 'Apenas números')
+
