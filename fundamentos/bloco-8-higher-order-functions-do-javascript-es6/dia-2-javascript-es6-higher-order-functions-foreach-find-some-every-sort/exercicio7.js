@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { verify } = require('crypto');
 
 const books = [
   {
@@ -64,3 +65,14 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+const expectedResult = false;
+
+function authorUnique() {
+  // escreva seu código aqui
+  const anos = (idade) => idade.author.birthYear
+  // const data = (niver) => niver.author.birthYear
+  // books.forEach(anos)
+  return books.every((niver)=> niver.author.birthYear !== books.forEach(anos))
+}
+console.log(authorUnique())
+// assert.strictEqual(authorUnique(), expectedResult);
