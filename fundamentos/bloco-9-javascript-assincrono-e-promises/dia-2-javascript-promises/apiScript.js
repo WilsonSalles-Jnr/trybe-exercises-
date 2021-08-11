@@ -21,15 +21,28 @@ const lista = (arr) => {
     return new Promise((funciona, naofunciona) => {
         let soma = arr.reduce((acc, cur) => acc += cur**2)
         if (soma < 8000) {
-            funciona('funciona');
+            let newarr =[2,3,5,10]
+            let pushArr = []
+            newarr.forEach((cur)=> pushArr.push(soma/cur))
+            // console.log(pushArr)
+            funciona(pushArr);
         }
-        console.log(soma)
-        naofunciona('não funciona')
+        // console.log(soma)
+        naofunciona("É mais de oito mil! Essa promise deve estar quebrada!")
     })
 }
-lista([1,2,3,4,5,6,7,8,9,10])
+const somatudo= (par)=> {
+    return new Promise ((ok,nok)=>{
+        let somar = par.reduce((acc,cur)=>acc+=cur)
+        if(somar > 300) {ok('maior que 300')}
+        nok('menor que 300')
+    })
+}
+lista([1,2,3,4,5,6,7,8,10,1])
 .then((certo)=>{
-    console.log(certo)
+    console.log(somatudo(certo)
+    .then((sure)=>console.log(sure))
+    .catch((fail)=>console.log(fail)))
 })
 .catch((error)=>{
     console.log(error)
