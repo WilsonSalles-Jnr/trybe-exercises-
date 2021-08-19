@@ -4,6 +4,5 @@ const uppercase = (str, callback) => {
     }, 500);
   };
 
-  uppercase('ola',console.log)
 
   module.exports = uppercase;
