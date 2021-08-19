@@ -15,3 +15,16 @@ test('Teste de erro',()=>(
         expect(error.message).toMatch(`User with 3 not found`)
     })
 ))
+
+test('Mesmo de antes só que com async e await',async()=>{
+    const resultado = await getUserName(2)
+    expect(resultado).toBe('Paul')
+})
+
+test('Mesmo de antes só que testando erro',async()=>{
+    try{
+        await getUserName(3)
+    } catch(error){
+        expect(error.message).toMatch(`User with 3 not found`)
+    }
+})
