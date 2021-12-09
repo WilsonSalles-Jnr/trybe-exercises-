@@ -1,1 +1,0 @@
-Até o momento, aprendi a utilizar o terminal para navegar e criar arquivos, atualmente, estou desenvolvendo a parte do Git/Github, logo logo, aqui estará mais atualizado
