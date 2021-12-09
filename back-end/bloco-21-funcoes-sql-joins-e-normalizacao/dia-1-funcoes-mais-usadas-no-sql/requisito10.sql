@@ -1,0 +1,4 @@
+USE hr;
+SELECT JOB_ID, ROUND(AVG(SALARY),2), COUNT(*) FROM employees
+GROUP BY department_id
+HAVING COUNT(*) > 10;
