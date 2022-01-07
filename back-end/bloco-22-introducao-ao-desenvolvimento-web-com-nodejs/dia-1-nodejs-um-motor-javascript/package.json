@@ -7,6 +7,7 @@
     "start": "node",
     "imc": "node exercicio1.js",
     "velocidade": "node velocidade.js",
+    "sorteio": "node sorteio.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
