@@ -1,4 +1,6 @@
-const imc = (peso, altura) => {
+const readlineSync = require('readline-sync');
+
+const imc = () => {
   return (peso / Math.pow(altura, 2)).toFixed(1);
 }
 const result = (imc) => {
@@ -19,4 +21,14 @@ const result = (imc) => {
   if(imc >= 35  && imc < 39.9) {return "Obesidade grau II"}
   if(imc >=  40) {return "Obesidade graus III e IV"}
 }
-module.exports = {imc, result}
+
+const peso = readlineSync.questionFloat('Qual seu peso? ');
+const altura = readlineSync.questionFloat('Qual sua altura? ')
+
+const resultado = () => {
+  return console.log(`Seu IMC é de ${imc(peso,altura)}, situação: ${result(imc(peso,altura))}`);
+
+}
+
+resultado();
+module.exports = resultado;

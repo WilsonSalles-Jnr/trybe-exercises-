@@ -4,7 +4,7 @@
   "description": "## Sobre: Este é o repositório utilizado para salvar os exercícios da Trybe, você pode conferir selecionando as branchs.",
   "main": "exercicio1.js",
   "scripts": {
-    "start": "node",
+    "start": "node index.js",
     "imc": "node exercicio1.js",
     "velocidade": "node velocidade.js",
     "sorteio": "node sorteio.js",
