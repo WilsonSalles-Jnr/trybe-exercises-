@@ -1,0 +1,20 @@
+{
+  "name": "my-script",
+  "version": "1.0.0",
+  "description": "## Sobre: Este é o repositório utilizado para salvar os exercícios da Trybe, você pode conferir selecionando as branchs.",
+  "main": "exercicio1.js",
+  "scripts": {
+    "start": "node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilsonSalles-Jnr/trybe-exercises-.git"
+  },
+  "author": "Wilson Salles Junior",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilsonSalles-Jnr/trybe-exercises-/issues"
+  },
+  "homepage": "https://github.com/WilsonSalles-Jnr/trybe-exercises-#readme"
+}
