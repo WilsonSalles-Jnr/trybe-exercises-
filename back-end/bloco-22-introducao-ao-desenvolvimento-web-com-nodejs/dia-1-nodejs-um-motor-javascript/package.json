@@ -5,6 +5,7 @@
   "main": "exercicio1.js",
   "scripts": {
     "start": "node",
+    "imc": "node exercicio1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
