@@ -1,3 +1,7 @@
 const imc = require('./imc');
+const readlineSync = require('readline-sync');
 
-console.log(imc(70,1.65));
+const peso = readlineSync.question('Qual seu peso? ');
+const altura = readlineSync.question('Qual sua altura? ')
+
+console.log(imc(Number(peso),Number(altura)));

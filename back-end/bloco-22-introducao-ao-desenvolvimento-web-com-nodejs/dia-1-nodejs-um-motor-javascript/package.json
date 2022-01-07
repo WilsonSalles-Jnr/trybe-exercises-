@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/WilsonSalles-Jnr/trybe-exercises-/issues"
   },
-  "homepage": "https://github.com/WilsonSalles-Jnr/trybe-exercises-#readme"
+  "homepage": "https://github.com/WilsonSalles-Jnr/trybe-exercises-#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
