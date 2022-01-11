@@ -15,3 +15,9 @@ describe('testando se um número é positivo, negativo ou neutro',()=>{
     expect(verificaNumero(0)).to.be.equals('neutro');
   })
 })
+
+describe('testando caso não seja um número', () => {
+  it('retorna "o valor deve ser um número".', () => {
+    expect(verificaNumero('abc')).to.be.equals('o valor deve ser um número')
+  })
+})
